@@ -2,7 +2,7 @@ import React from "react";
 import "./Projects.css";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import projectsData from "./projectsData";
+import projectsData from "./ProjectsData";
 
 function Projects() {
   return (
