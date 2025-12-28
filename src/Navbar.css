@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  margin: 0;
+  background-color: transparent;
+}
+
+/* ---------- HEADER ---------- */
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  min-height: 70px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  z-index: 33;
+}
+
+.log {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+
+.log p {
+  margin: 0;
+}
+
+/* ---------- NAVBAR ---------- */
+.Navbar {
+  display: flex;
+  gap: 2.5rem;
+  padding: 0.75rem 1.75rem;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 2rem 0 0 2rem;
+}
+
+/* Links */
+.Navbar a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  transition: 
+    color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* Hover effect */
+.Navbar a:hover {
+  color: #ff7a18;
+  transform: scale(1.05);
+}
+
+/* 🔥 Fade others when one is hovered */
+.Navbar:has(a:hover) a:not(:hover) {
+  opacity: 0.3;
+}
+
+/* ---------- SCROLL PROGRESS BAR ---------- */
+.scroll-progress-container {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 33;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00bfff, #ff7a18);
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .scroll-progress-container {
+    top: 9vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-progress-container {
+    top: 8vh;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .head {
+    height: 9vh;
+    min-height: 65px;
+    padding: 0 1.5rem;
+  }
+
+  .log {
+    font-size: 1.5rem;
+  }
+
+  .Navbar {
+    gap: 1.5rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .Navbar a {
+    font-size: 0.95rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .head {
+    height: 8vh;
+    min-height: 60px;
+    padding: 0 1rem;
+  }
+
+  .log {
+    font-size: 1.3rem;
+  }
+
+  .Navbar {
+    gap: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .Navbar a {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.3rem;
+  }
+}

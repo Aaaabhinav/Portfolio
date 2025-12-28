@@ -1,0 +1,163 @@
+/* =======================
+   PROJECTS SECTION
+======================= */
+
+.Projects {
+  width: 90vw;
+  margin: 150px auto 200px;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+/* Heading */
+.Projects h1 {
+  grid-column: span 2;
+  text-align: left;
+  margin: 0 0 3rem 0;
+}
+
+/* Line under Projects heading */
+.Projects > hr {
+  grid-column: span 2;
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgb(255, 255, 255);
+  margin: 0 0 3rem 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .Projects {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 100px auto 150px;
+    padding: 0 1rem;
+  }
+
+  .Projects h1 {
+    grid-column: span 1;
+    margin-bottom: 2rem;
+  }
+
+  .Projects > hr {
+    grid-column: span 1;
+    margin-bottom: 2rem;
+  }
+}
+
+/* =======================
+   PROJECT CARD
+======================= */
+
+.prop {
+  background: rgba(73, 74, 74, 0.75);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(76, 70, 70, 0.1);
+  backdrop-filter: blur(10px);
+
+  width: 100%;
+  max-width: 100%;
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.prop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.prop:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.prop:hover::before {
+  opacity: 1;
+}
+
+.prop h2 {
+  margin: 0 0 1.25rem 0;
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.prop hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0 0 1.25rem 0;
+}
+
+.prop ul {
+  margin: 0;
+  text-align: left;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.prop li {
+  margin-bottom: 0.75rem;
+  list-style-type: disc;
+}
+
+.prop li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive card adjustments */
+@media (max-width: 900px) {
+  .prop {
+    padding: 1.75rem;
+    min-height: 250px;
+  }
+
+  .prop h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .prop hr {
+    margin-bottom: 1rem;
+  }
+
+  .prop ul {
+    padding-left: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .prop li {
+    margin-bottom: 0.6rem;
+  }
+}
