@@ -99,6 +99,12 @@ body {
   }
 }
 
+@media (max-width: 400px) {
+  .scroll-progress-container {
+    top: 8vh;
+  }
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .head {
@@ -141,5 +147,54 @@ body {
   .Navbar a {
     font-size: 0.85rem;
     padding: 0.15rem 0.3rem;
+  }
+}
+
+/* Extra small screens (336px and below) */
+@media (max-width: 400px) {
+  .head {
+    height: 8vh;
+    min-height: 55px;
+    padding: 0 0.75rem;
+    flex-wrap: nowrap;
+  }
+
+  .log {
+    font-size: 1.1rem;
+    padding: 0.25rem 0;
+    flex-shrink: 0;
+  }
+
+  .Navbar {
+    gap: 0.6rem;
+    padding: 0.4rem 0.5rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .Navbar a {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.25rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .head {
+    padding: 0 0.5rem;
+  }
+
+  .log {
+    font-size: 1rem;
+  }
+
+  .Navbar {
+    gap: 0.4rem;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .Navbar a {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.2rem;
   }
 }
