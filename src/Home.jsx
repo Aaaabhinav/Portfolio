@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "./Home.css";
 
 const videoSrc = new URL("./assets/Break_LOOP.mp4", import.meta.url).href;
+const resumeSrc = new URL("./assets/Abhinav_Resume.pdf", import.meta.url).href;
 
 function Home() {
   const [displayedText, setDisplayedText] = useState("");
@@ -23,6 +24,15 @@ function Home() {
     return () => clearInterval(typingInterval);
   }, []);
 
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = resumeSrc;
+    link.download = "Abhinav_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="Home">
       <div className="Home-content">
@@ -42,6 +52,17 @@ function Home() {
             "A curious developer learning to build solutions that matter.
             Growing as a developer by creating meaningful and practical projects."
           </h2>
+          <motion.button
+            className="download-resume-btn"
+            onClick={handleDownloadResume}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Download Resume
+          </motion.button>
         </motion.div>
 
         {/* Video Section */}

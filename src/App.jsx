@@ -33,7 +33,7 @@ function App() {
 
       {/* Content */}
       <Navbar />
-      <div id="Home" style={{ scrollMarginTop: '25vh' }}><Home /></div>
+      <div id="Home" style={{ scrollMarginTop: '20vh' }}><Home /></div>
       
       <div id="About" style={{ scrollMarginTop: '10vh' }}><About /></div>
       
