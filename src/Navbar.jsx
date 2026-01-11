@@ -57,7 +57,7 @@ function Navbar() {
         </motion.div>
 
         <motion.nav className="Navbar">
-          {["Home", "About", "Projects", "Contact"].map((item) => (
+          {["Home", "Skills", "Projects", "Contact"].map((item) => (
             <motion.a
               key={item}
               href={`#${item}`}

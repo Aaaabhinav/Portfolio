@@ -7,6 +7,7 @@ const resumeSrc = new URL("./assets/Abhinav_Resume.pdf", import.meta.url).href;
 
 function Home() {
   const [displayedText, setDisplayedText] = useState("");
+  const [showDownloadMessage, setShowDownloadMessage] = useState(false);
   const fullText = "Abhinav here...";
   const typingSpeed = 100; // milliseconds per character
 
@@ -31,6 +32,12 @@ function Home() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    // Show download message
+    setShowDownloadMessage(true);
+    setTimeout(() => {
+      setShowDownloadMessage(false);
+    }, 3000);
   };
 
   return (
@@ -52,17 +59,45 @@ function Home() {
             "A curious developer learning to build solutions that matter.
             Growing as a developer by creating meaningful and practical projects."
           </h2>
-          <motion.button
-            className="download-resume-btn"
-            onClick={handleDownloadResume}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Download Resume
-          </motion.button>
+          <div className="buttons-container">
+            <motion.button
+              className="download-resume-btn"
+              onClick={handleDownloadResume}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download Resume
+            </motion.button>
+            <motion.button
+              className="know-about-me-btn"
+              onClick={() => {
+                document.getElementById('About')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Know about me
+            </motion.button>
+          </div>
+          
+          {/* Download Success Message */}
+          {showDownloadMessage && (
+            <motion.div
+              className="download-message"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              Resume downloaded ✓
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Video Section */}

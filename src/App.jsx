@@ -5,6 +5,7 @@ import Projects from './Projects'
 import About from './About'
 import Contacts from './Contacts'
 import Home from './Home'
+import Skills from './Skills'
 
 import './App.css'
 
@@ -34,6 +35,7 @@ function App() {
       {/* Content */}
       <Navbar />
       <div id="Home" style={{ scrollMarginTop: '20vh' }}><Home /></div>
+      <div id="Skills" style={{ scrollMarginTop: '10vh' }}><Skills /></div>
       
       <div id="About" style={{ scrollMarginTop: '10vh' }}><About /></div>
       
