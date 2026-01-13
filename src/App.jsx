@@ -6,6 +6,7 @@ import About from './About'
 import Contacts from './Contacts'
 import Home from './Home'
 import Skills from './Skills'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 
 import './App.css'
@@ -36,6 +37,8 @@ function App() {
       {/* Content */}
       <Navbar />
       <Analytics/>
+      <SpeedInsights/>
+      
       <div id="Home" style={{ scrollMarginTop: '20vh' }}><Home /></div>
       <div id="Skills" style={{ scrollMarginTop: '10vh' }}><Skills /></div>
       

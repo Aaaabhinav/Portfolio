@@ -9,7 +9,7 @@ const skillsData = [
   },
   {
     category: "TOOLS & TECHNOLOGIES",
-    skills: ["GitHub","Figma", "Postman", "Docker", "AWS(basic)", "Firebase"]
+    skills: ["GitHub","Figma", "Postman", "Docker", "AWS(basic)", "Firebase","Vercel"]
   },
   {
     category: "LANGUAGES",
