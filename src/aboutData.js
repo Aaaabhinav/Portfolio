@@ -24,7 +24,7 @@ const aboutData = [
   {
     title: "3rd Year CS Student at Nirma University(NU 27)",
     points: [
-      "8.81 CGPA",
+      "8.77 CGPA",
       "Minor : Adaptive AI"
     ]
   },
