@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Home.css";
 
-const videoSrc = new URL("./assets/Break_LOOP.mp4", import.meta.url).href;
+const videoSrc = new URL("./assets/Peace.mp4", import.meta.url).href;
 const resumeSrc = new URL("./assets/Abhinav_Resume.pdf", import.meta.url).href;
 
 function Home() {
